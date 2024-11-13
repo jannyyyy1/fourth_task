@@ -10,4 +10,7 @@ function draw() {
 
   let gravity = createVector(0, 0.1); // 중력 벡터
   mover.applyForce(gravity); // 중력 힘 적용
+
+  mover.update();
+  mover.show();
 }
