@@ -23,6 +23,26 @@ class Mover {
             let force = boundaryForce / distance;
             this.velocity.y -= force; // 위로 밀어냄
             }
+            // 왼쪽 경계
+        if (this.position.x < edgeDistance) {
+            let distance = max(this.position.x, 1);
+            let force = boundaryForce / distance;
+            this.velocity.x += force; // 오른쪽으로 밀어냄
+             }
+  
+            // 오른쪽 경계
+        if (this.position.x > width - edgeDistance) {
+            let distance = max(width - this.position.x, 1);
+            let force = boundaryForce / distance;
+            this.velocity.x -= force; // 왼쪽으로 밀어냄
+            }
+  
+            // 위쪽 경계
+        if (this.position.y < edgeDistance) {
+            let distance = max(this.position.y, 1);
+            let force = boundaryForce / distance;
+            this.velocity.y += force; // 아래로 밀어냄
+            }
         }
     
     update() {
