@@ -12,6 +12,18 @@ class Mover {
         f.div(this.mass); // 질량으로 나누어 가속도 계산
         this.acceleration.add(f); // 가속도에 추가
         }
+
+    applyBoundaryForce() {
+        let boundaryForce = 5; // 기본 힘의 강도
+        let edgeDistance = 50; // 경계에서 힘이 작용하는 거리
+
+            // 아래쪽 경계
+        if (this.position.y > height - edgeDistance) {
+            let distance = max(height - this.position.y, 1);
+            let force = boundaryForce / distance;
+            this.velocity.y -= force; // 위로 밀어냄
+            }
+        }
     
     update() {
             this.velocity.add(this.acceleration); // 가속도를 속도에 더함

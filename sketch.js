@@ -11,6 +11,8 @@ function draw() {
   let gravity = createVector(0, 0.1); // 중력 벡터
   mover.applyForce(gravity); // 중력 힘 적용
 
+  mover.applyBoundaryForce();  // 벽 경계에 가까워지면 반발력 적용
+
   mover.update();
   mover.show();
 }
