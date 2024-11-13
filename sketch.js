@@ -13,6 +13,11 @@ function draw() {
 
   mover.applyBoundaryForce();  // 벽 경계에 가까워지면 반발력 적용
 
+  if (mouseIsPressed) { // 마우스를 클릭하는 동안
+    let wind = createVector(0, -0.1); // 바람 힘 (위로 올라감)
+    mover.applyForce(wind); // 바람 힘 적용
+  }
+
   mover.update();
   mover.show();
 }
